@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>9.21排位赛补题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="题目链接： Dashboard - The 19th Zhejiang University City College Programming Contest - Codeforces G. Guaba and Computational Geometry 题目大意： ​ 在一个二维平面上给出n个矩形，每个矩形都有一个权重，找出两个不相交的矩形，并使其权重最大，如果找不到就输出-1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9.21排位赛补题">
+<meta property="og:url" content="http://example.com/2022/09/23/9-21%E6%8E%92%E4%BD%8D%E8%B5%9B%E8%A1%A5%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目链接： Dashboard - The 19th Zhejiang University City College Programming Contest - Codeforces G. Guaba and Computational Geometry 题目大意： ​ 在一个二维平面上给出n个矩形，每个矩形都有一个权重，找出两个不相交的矩形，并使其权重最大，如果找不到就输出-1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-23T11:45:22.000Z">
+<meta property="article:modified_time" content="2022-09-26T03:14:51.559Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-9-21排位赛补题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/23/9-21%E6%8E%92%E4%BD%8D%E8%B5%9B%E8%A1%A5%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-09-23T11:45:22.000Z" itemprop="datePublished">2022-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      9.21排位赛补题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="题目链接">题目链接：</h3>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/103660">Dashboard - The 19th
+Zhejiang University City College Programming Contest -
+Codeforces</a></p>
+<h2 id="g.-guaba-and-computational-geometry">G. Guaba and Computational
+Geometry</h2>
+<h3 id="题目大意">题目大意：</h3>
+<p>​
+在一个二维平面上给出n个矩形，每个矩形都有一个权重，找出两个不相交的矩形，并使其权重最大，如果找不到就输出-1。</p>
+<h3 id="思路">思路：</h3>
+<p>​ 首先，在二维平面两个不相交的矩形其在x,y轴的投影也不相交。</p>
+<p>​
+可以分别列出n个矩形在x,y轴上的投影线段，按左端点排序。对于当前线段，找出他前面的，不与自己相交的线段中最大权重。最终取Max即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n,w[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node1</span>&#123;</span><br><span class="line">    <span class="type">int</span> a,b,c,d;</span><br><span class="line">&#125;num[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node2</span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y,v;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> node2 &amp;k) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x &lt; k.x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;p[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node3</span>&#123;</span><br><span class="line">    <span class="type">int</span> y,v;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> node3 &amp;k) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> y &gt; k.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> mx = <span class="number">0</span>,res = <span class="number">0</span>;</span><br><span class="line">    priority_queue&lt;node3&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;q.<span class="built_in">top</span>().y&lt;p[i].x) &#123;</span><br><span class="line">            mx = <span class="built_in">max</span>(mx, q.<span class="built_in">top</span>().v);</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(mx) res = <span class="built_in">max</span>(res, mx+p[i].v);</span><br><span class="line">        node3 temp =  &#123;p[i].y,p[i].v&#125;;</span><br><span class="line">        q.<span class="built_in">push</span>(temp);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;num[i].a&gt;&gt;num[i].b&gt;&gt;num[i].c&gt;&gt;num[i].d;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;w[i];</span><br><span class="line"> </span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        p[i] = &#123;num[i].a,num[i].c,w[i]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(p+<span class="number">1</span>,p+<span class="number">1</span>+n);</span><br><span class="line">    res = <span class="built_in">max</span>(res, <span class="built_in">work</span>());</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        p[i] = &#123;num[i].b,num[i].d,w[i]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(p+<span class="number">1</span>,p+<span class="number">1</span>+n);</span><br><span class="line">    res = <span class="built_in">max</span>(res, <span class="built_in">work</span>());</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span>(res) cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt;(<span class="number">-1</span>)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="h.-distance">H. Distance</h2>
+<h3 id="题目大意-1">题目大意：</h3>
+<p>​
+依次给出n个区间l,r，每次给出新区间后找到一个x，使得x到目前已有区间的距离最小。</p>
+<h3 id="思路-1">思路：</h3>
+<p>​
+相当于在n条线段中找到一个点，使得该点左边线段的右端点值的和等于右边线段的左端点值的和。</p>
+<p>​
+每次新加入区间，如果新区间的r大于已有区间的l，说明需要将x左移，如果新区间的l大于已有区间的r，说明需要将x右移。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    priority_queue &lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, less&lt;<span class="type">int</span>&gt; &gt; x;</span><br><span class="line">    priority_queue &lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt; y;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> l,r;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        cin&gt;&gt;l&gt;&gt;r;</span><br><span class="line">        <span class="keyword">if</span>(!x.<span class="built_in">empty</span>() &amp;&amp; r&lt;x.<span class="built_in">top</span>()) &#123;</span><br><span class="line">            res += x.<span class="built_in">top</span>() - r;</span><br><span class="line">            y.<span class="built_in">push</span>(x.<span class="built_in">top</span>()), x.<span class="built_in">pop</span>();</span><br><span class="line">            x.<span class="built_in">push</span>(l), x.<span class="built_in">push</span>(r);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(!y.<span class="built_in">empty</span>() &amp;&amp; l&gt;y.<span class="built_in">top</span>()) &#123;</span><br><span class="line">            res += l-y.<span class="built_in">top</span>();</span><br><span class="line">            x.<span class="built_in">push</span>(y.<span class="built_in">top</span>()), y.<span class="built_in">pop</span>();</span><br><span class="line">            y.<span class="built_in">push</span>(l), y.<span class="built_in">push</span>(r);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            x.<span class="built_in">push</span>(l), y.<span class="built_in">push</span>(r);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/23/9-21%E6%8E%92%E4%BD%8D%E8%B5%9B%E8%A1%A5%E9%A2%98/" data-id="clb4rbjpv00027gtyg8st20bt" data-title="9.21排位赛补题" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/09/26/9-24%E6%8E%92%E4%BD%8D%E8%B5%9B%E8%A1%A5%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          9-24排位赛补题
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/30/11-30%E6%8E%92%E4%BD%8D%E8%B5%9B%E8%A1%A5%E9%A2%98/">11.30排位赛补题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/29/2023%E5%AF%92%E5%81%87%E9%9B%86%E8%AE%ADCF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">2023寒假集训CF刷题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/08/%E5%8D%81%E6%9C%88%E6%80%9D%E7%BB%B4%E4%B8%93%E7%BB%83/">十月思维专练</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/08/cf%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%9B%86%E9%A2%98/">cf动态规划集题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/29/9-29%E8%A1%A5%E9%A2%98/">9-29补题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
